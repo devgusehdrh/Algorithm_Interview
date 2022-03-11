@@ -7,3 +7,7 @@ class Solution:
             if i % 2 == 0:
                 result += n
         return result
+    
+    # 
+    def arrayPairSum_python(self, nums: List[int]) -> int:
+        return sum(sorted(nums)[::2])
