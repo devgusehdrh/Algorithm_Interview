@@ -70,35 +70,3 @@ if __name__ == '__main__':
     s = [-1, 0, 1, 2, -1, -4]
     print(s1.threeSum(s))
     print(s1.threeSum_pointer(s))
-
-# num = [-1, 0, 1, 2, -1, -4]
-# num.sort()
-#
-# print(num)
-#
-#
-#
-#
-# for i in len(num):
-#     search(num, i,i+1,i+2)
-#
-#
-#
-#
-#
-#
-#
-#
-# class Solution:
-#     result = []
-#     def search(self,num:list[int], left:int,center:int,right:int):
-#         while (num[left] + num[center] + num[right] == 0 and left < center and center < right):
-#             result.append()
-#             if right < len(num)-1:
-#                 right ++
-#             else:
-#                 if center < right-1:
-#                     center ++
-#
-#
-#
