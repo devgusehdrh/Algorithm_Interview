@@ -35,3 +35,24 @@ class Solution:
 
         return head
 
+    def reverseBetween_leetcode_solution(self, head: Optional[ListNode], left: int, right: int) -> Optional[ListNode]:
+        cur, prev = head, None
+
+        while left > 1:
+            prev = cur
+            cur = cur.next
+            left, right = left - 1, right - 1
+
+        tail, con = cur, prev
+
+        while right:
+            next = cur.next
+            cur.next = prev
+            prev = cur
+            cur = next
+            right -= 1
+
+        con.next = prev
+        tail.next = cur
+
+        return head
