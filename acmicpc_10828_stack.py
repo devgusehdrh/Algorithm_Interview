@@ -1,3 +1,5 @@
+# 스택이 비었는데, pop 또는 top을 실행하게 되면 인덱스 오류가 난다
+# 따라서 pop/top을 구현 할 경우에는 if not stack 을 먼저 hit 할 수 있게 구현할 것 
 
 import sys
 stack = []

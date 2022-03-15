@@ -1,25 +1,31 @@
 import sys
-input = sys.stdin.readline
 
 stack = []
-result = []
-count = 1
-
-t = int(input())
-
-for i in range(t):
-    num = int(input())
-    while count <= num:
-        stack.append(count)
-        result.append('+')
-        count += 1
-
-    if len(stack) and num == stack[-1]:
-        stack.pop()
-        result.append('-')
-    else:
-        print('NO')
+table = {
+    ')':'(',
+    ']':'['
+}
+b = 0
+while True:
+    inputs = sys.stdin.readline().rstrip()
+    if inputs == '.':
         break
+    for input in inputs:
+        if input == '(' or input == '[':
+            stack.append(input)
+        elif stack and input in table and table[input] != stack[-1]:
+            b = 1
+            break
+        elif not stack and input in table:
 
-if not stack:
-    print('\n'.join(result))
+            b = 1
+            break
+        elif stack and input in table and table[input] == stack[-1]:
+            stack.pop()
+    if len(stack) == 0 and b == 0:
+        print('yes')
+    else:
+        print('no')
+        b = 0
+
+    stack = []
